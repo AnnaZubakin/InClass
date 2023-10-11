@@ -186,3 +186,39 @@ while true {
         break
     }
 }
+/*
+ Exercise 3
+ Inside the for loop create randomNumber for the random Int calculation. Calculate and print("Number 5 will be after \(counter) shuffles"). Don't forget to make a break inside the if statement.
+ */
+
+var numberToCheck = 5
+var shuffleCounts = 0
+
+while numberToCheck != 5 {
+    numberToCheck = Int.random(in: 1...10)
+    shuffleCounts += 1
+}
+print("Number \(numberToCheck) will be after \(shuffleCounts) shuffles")
+
+/*
+ Exercise 4
+ A bug is climbing to a 10-meter electric post. During the day, bug can climb two meters, during the night she slides down to 1 meter. Determine with the help of the cycle how many days bug will climb on the top of the post. Think about which loop to use in which situation. print("bug will spend \(numberOfDays)) to reach top of the post")
+ */
+
+
+var distance = 0
+var numberOfDays = 0
+var iSDay = true
+
+while distance != 10 {
+    if iSDay {
+        distance += 2
+        numberOfDays += 1
+        iSDay = false
+    } else {
+        distance -= 1
+        iSDay = true
+    }
+}
+
+print(numberOfDays)
